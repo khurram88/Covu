@@ -1,0 +1,11 @@
+/* Desktop Ntification CSS Document */
+
+body{
+background-image:url(img/blackbox.png); 
+background-size:300px 160px;
+background-repeat:no-repeat;
+width:280px; 
+height:auto;
+overflow-y:scroll;
+overflow-x:hidden;
+}

@@ -1,0 +1,628 @@
+<html>
+  <head>
+  	<link rel="stylesheet" href="pop.css" title ="popup_css" type="text/css"/> 
+	<link href="content/jquery.notice.css" rel="stylesheet" type="text/css"/>
+	<link href="content/examples.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" href="wait.css" type="text/css"/>
+	
+	<script type="text/javascript" src="common.js"></script>
+	<script src="waiting.js"></script>
+	<script src="content/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="content/jquery.notice.js"></script>
+	<script src="content/jquery-impromptu.3.2.js"></script>
+  </head>
+
+<body>
+
+
+<!-- Screen Sign Up Starts -->
+
+<div id="screen_signup" style="display:none; height:300px;">
+		<div id="lite-header" class="header" >
+			<div class="button" style="background-image:url(img/back-button.png);float:left; width:48px; height:29px; margin-top:5px; margin-left:7px;  text-align:center; cursor:pointer;" onClick="CoVu.Popup.showHome();">
+			<span style="color:white; margin-top: 7px;display:inline-block;margin-left: 4px; font-size: 12px;">Back</span>
+			</div>
+			<span style="color:white; margin-top: 7px;display:inline-block; margin-left: 70px;font-size: 20px;">Sign Up</span>
+		</div>
+
+	<div class="content" style="width:310px;" >
+	
+		<div style=" float:left;margin-left:17px; width:280px;height:50px; margin-top:15px;  ">	
+			<span style="color:#FFFFFF; font-size:14px;display: inline-block; padding-bottom:4px;padding-left: 5px;">E-mail Address:</span>
+			<br />
+			<div style="background-image:url(img/signin_input.png); width:278px; height:28px; ">
+			<input type="text" id="signup-email" placeholder="Enter your Email address..." style="height:18px;background:none;border:none; width:269px; margin-top:4px; margin-left:2px; outline:none;"  onKeyPress="CoVu.Popup.triggetClickOn('signup-submit');" />
+			</div>
+		</div>
+		<div style="float:left; margin-left:17px; width:280px;height:100px;margin-top: 13px;">	
+			<span style="color:#FFFFFF;font-size:14px;display: inline-block; padding-bottom:4px;padding-left: 5px;">Password:</span>
+			<br />
+			<div style="background-image:url(img/signin_input.png); width:278px; height:28px; ">
+			<input type="password" id="signup-password"placeholder="Enter your password..." style="height:18px;background:none;border:none; width:269px; margin-top:4px; margin-left:2px; outline:none;" onKeyPress="CoVu.Popup.triggetClickOn('signup-submit');" />
+			</div>
+			
+			<span style="color:#FFFFFF; display: inline-block;margin-top:17px;font-size:14px;padding-left: 5px;">Confirm Password:</span>
+			<br />
+			<div style="background-image:url(img/signin_input.png); width:278px; height:28px; ">
+			<input type="password" id="confirm-password"placeholder="Re-Enter your password..." style="height:18px;background:none;border:none; width:269px; margin-top:4px; margin-left:2px; outline:none;" onKeyPress="CoVu.Popup.triggetClickOn('signup-submit');" />
+			</div>
+		</div>
+		<div class="button" style=" float:left;margin-left:95px; margin-top:25px;height:43px;">
+		<img id="signup-submit" src="img/submit.png" style="width:129px; height:37px;cursor:pointer;"onClick="CoVu.Popup.Signup();"  />
+		</div>
+		
+	</div>
+
+</div>
+
+<!--Screen Sign Up end -->
+
+<!-- Screen Sign In Starts -->
+
+<div id="screen_signin" style="display:none; height:300px;">
+
+		<div id="signinlite-header" class="header" >
+			<div class="button" style="background-image:url(img/back-button.png);float:left; width:48px; height:29px; margin-top:5px; margin-left:7px;  text-align:center; cursor:pointer;" onClick="CoVu.Popup.showHome();">
+			<span style="color:white; margin-top: 7px;display:inline-block;margin-left: 4px; font-size: 12px;">Back</span>
+			</div>
+			<span style="color:white; margin-top: 7px;display:inline-block; margin-left: 70px;font-size: 20px;">Sign In</span>
+		</div>
+
+	<div class="content" style="width:310px;" >
+		<div style=" float:left;margin-left:17px; width:280px;height:50px; margin-top:8px;  ">	
+			<span style="color:#FFFFFF; font-size:14px;display: inline-block; padding-bottom:4px;padding-left: 5px;">E-mail Address:</span>
+			<br />
+			<div style="background-image:url(img/signin_input.png); width:278px; height:28px; "> 
+			<input type="text" id="email_id" placeholder="Enter your Email address..." style="height:18px;background:none;border:none; width:269px; margin-top:4px; margin-left:2px; outline:none;" onKeyPress="CoVu.Popup.triggetClickOn('signin-submit');" />
+			</div>
+		</div>
+		<div style="float:left; margin-left:17px; width:280px;height:50px; margin-top:15px;">	
+			<span style="color:#FFFFFF;font-size:14px;display: inline-block; padding-bottom:4px;padding-left: 5px;">Password:</span>
+			<br />
+			<div style="background-image:url(img/signin_input.png); width:278px; height:28px;"> 
+			<input type="password" id="password" placeholder="Enter your password..." style="height:18px; background:none;border:none;width:269px; margin-top:4px; margin-left:2px; outline:none;" onKeyPress="CoVu.Popup.triggetClickOn('signin-submit');" />
+			</div>
+		</div>
+		<div id="password_remember" style="display:block;float:left; width: 280px;margin-top: 15px;margin-left: 17px; color:#FFFFFF;">
+		 <input type=CHECKBOX id="remember_password" >
+
+		<label for="remember_password" style='position:absolute; font-size:12px; font-weight: bold; margin-top:2px;padding-left:5px;'> Save Password </label>
+		</div>
+		
+		<div class="button" id="signin-button" style="display:block; float:left;margin-left:95px; margin-top:35px;height:43px;">
+			<img id="signin-submit" src="img/submit.png" style="width:129px; height:37px;cursor:pointer;"onClick="CoVu.Popup.logIn();" />
+		</div>
+		
+		<!--<div style="text-align: center; margin-top: 0px;">
+			<span style="color:#4BACC6; float: left;margin-left:108px;font: 12px arial bold; display:none; cursor:pointer; text-decoration:underline;" onClick="CoVu.Popup.toogleForgotControls();" >Forgot password?</span>
+		
+			<div id="forgotPassword" style="display: none; margin-top: 8px;display: block;float: left;width: 280px;margin-left: 17px;">
+				<div style="background-image:url(img/signin_input.png); width:278px; height:28px;">
+			      <input id="forgotPasswordEmail" style="height:18px; background:none;border:none;width:269px; margin-top:4px; margin-left:2px; outline:none;" type="text" placeholder=" Enter Your Email Address ..."  /><br />
+                </div>
+				<img id="forgotPasswordSubmit" style="cursor:pointer; margin-top: 10px;" src="img/submit.png" onClick="CoVu.Popup.onForgotPasswordSubmit();"/>
+			</div>
+		</div>-->
+		
+	</div>
+
+</div>
+
+<!--Screen Sign In end -->
+
+<!-- Waiting Screen Starts -->
+
+<div id="screen_waiting" style="display:none;">
+		  
+		  <div id="homeHeader" style="display:block; "> 
+	 <img src="img/covu_header_logo.png" style="width:164px; margin-left:73px;margin-top:12px;" />
+	 </div>
+
+	<div class="content" style="width:310px;" >
+
+				
+		<div style='height: 400px; width:310px;'>
+			<div style='height:2px;'></div>
+			<br />
+				
+			<div> <img  src="img/spinny.gif"  style=' width:225px; height:225;padding-top:60px; padding-left:40px;' /> </div>
+					
+        </div>
+    </div>
+	
+</div>
+
+<!-- Waiting Screen end -->
+
+
+
+<!-- Home Screen Main Page Starts -->
+<div id="screen_default" style="display:none; position:fixed; opticity:1;">
+	<!-- LoggedIn Content Starts -->
+	<div id="content_login" style="width:308px; height:415px;display:none;margin-top: 44px;">
+		<div style="cursor:default; background-image:url(img/user_profie_tab.png);width:290px; height:34px;margin-left:10px;margin-top:0px;">
+			
+			<img id="large_profile_image" src="img/avatar.png" style="border-radius:3px;width:27px; height:27px;float:left; margin-left:5px;margin-top:2px;" />
+			
+			<span id="facebook_user_name" style="display:inline-block;margin-top:7px;float:left;margin-left:5px;font-weight:bold;"></span>
+		</div>
+	<!-- Friends & Notification Container Starts -->
+	<div id="f_n_container" class="friendlist_container" style=" overflow:hidden;">
+		<div id="tabs" style="height: 35px;">
+			<img id="frnd_large"  src="img/friends_button_active.png" style="display:block;width:144px;height:33px;float:left;margin-left:5px;margin-top:3px;" />
+			<img id="frnd_small" class="button" src="img/friends_button.png" style="display:none;width:144px;height:33px;float:left;margin-left:5px;margin-top:3px;"/>
+		<div id="notification_small" class="button" style="cursor: pointer; background-image:url(img/activity_button.png); display:block;width:144px;height:33px;float:left;margin-left:-1px;margin-top:3px;" >
+			<div id="notify_box" style="display:none;background-image:url(img/notification.png); width:25px;height:25px;position:absolute;right:7px;top:77px;">
+				<span id="frds_notification" class="counter" style=""></span>
+			</div>
+		</div>
+		
+			<img id="notification_large" src="img/activity_button_active.png" style="display:none;width:144px;height:33px;float:left;margin-left:-1px;margin-top:3px;" />
+		</div>
+<!-- Friends Starts -->
+
+<!--Lead_clone div start -->
+		<div id="lead_clone"style="display:none;float:left;width:275px; height:33px; background-image:url(img/friend_tab.png); background-size:285px 33px;">
+						
+				<img src="img/avatar.png" id="img_pp" style="border-radius:5px;width:25px;height:25px;float:left;margin-left:10px;margin-top:3px;" />
+				
+				<span style="color:white;width:100px;display:inline-block;margin-top:7px;margin-left:10px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;">abcdef</span>
+				<span style="cursor:pointer; font-size:10px; color:white; width:30px;display:inline-block;margin-top:7px;margin-left:5px;"></span>
+				<span style="display: inline-block;float:right;font-size: 14px;color:white; margin-right:8px; margin-top: 8px;">Coviewer</span>
+				
+				
+		</div>
+<!--Lead_clone div ends -->
+		
+<!--Lead_main div Start -->
+<div id="lead_main" class="session" style="display:block;">
+		
+		<div style=" background-image:url(img/session_header.png); width:285px; height:32px;">
+			<img id="lead_stop" class="button" src="img/stop_button.png" style="width:63px; height:25px; float:right; margin-right:10px; margin-top:2px;"/>
+			
+			<div style=" background:url(img/small-input-text-field.png);background-size:63px 25px;width:63px;height:25px;float:right;margin-right:8px;margin-top: 2px;text-align:center;">
+				<span  id='follow_code' style="font-size:14px; color:black; display:inline-block; margin-top:5px; -webkit-user-select:text;">a1z6</span>
+			</div>
+			
+		</div>
+<!--Lead_container div starts -->
+	<div id="lead_container" style="width:275px; min-height:40px; max-height:80px;overflow-y: auto;overflow-x: hidden; border:5px solid black; float:left; border-radius:7px;margin-top: -5px;">
+		
+		
+	</div>
+<!--Lead_container div ends -->
+</div>		
+		
+<!--Lead_main div ends -->
+			<!--Friends clone div -->
+		<div id="covu_friends" class="covu_f" style="display:none;">  <!-- -->
+				<img src="img/online.png"  id="online_friends_img" style="display:block; width:12px; height:10px;float: left;margin-left:13px;margin-top:11px;"/>
+				<img src="img/offline.png" id="offline_friends_img" style="display:none; width:12px; height:10px;float: left;margin-left:13px;margin-top:11px;"/>
+				
+				<img src="img/avatar.png" id="img_pp" style="border-radius:5px;width:25px;height:25px;float:left;margin-left:10px;margin-top:3px;" />
+				
+				<span id="friend_name" style="display: inline-block;margin-top:7px;margin-left:10px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden; width: 115px;">abcdef</span>
+				<img class="button"	src="" id="covu_img" style="cursor:pointer; display:none;width:72px;height:25px;float:right;margin-right:5px;margin-top:3px;" />
+			</div>
+		<!--Friends clone div ends -->
+		<div id="covu_friends_container" style="display:block; height:328px; width:295px;overflow-y:auto; overflow-x:hidden;">
+			<div id="covu_friends_container_online" style="display:block; width:292px;">
+			
+			</div>
+			
+			<div id="covu_friends_container_offline" style="display:block; width:292px;">
+			
+			</div>
+			
+			
+		</div>
+		
+		<!-- Friends Ends -->
+
+<!-- Recents container starts -->
+<div id="guest_case" style="display:none; margin-left:5px; width:250px; cursor:pointer;"> 
+	<img src="img/facebook_icon.png" style="margin-left:5px; margin-top:6px;" />
+</div>   
+
+  <div id="recent_main" style="display:block;width: 292px;height:auto;">
+		<div style="background-image:url(img/recents._header.png); background-repeat:no-repeat;margin-left:3px; float:left;width:292px;height:19px;"></div>
+		<div id="recents_container" style="display:block;width: 292px;max-height:45px;min-height:24px;margin-left:3px;overflow-y:auto; overflow-x:hidden;"> 
+			<div id="recent_container" style="display:block; width: 294px;height:31px; float:left;background-image:url(img/friend_tab.png); background-size:290px 31px;">
+				<span id="clone_recent" title="" style="cursor:default; display:inline-block; width:210px; margin-left:12px; margin-top:6px; color:#00CCCC;font-size: 10px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;"></span>
+				<img id="recent_stop" class="button" src="img/stop_button.png" style="width:40px; height:21px; float:right; margin-right:10px; margin-top:3px;"/>
+			</div>
+		</div>
+  </div>
+<!-- Recents container ends -->
+
+		<!-- notification container starts --> 
+<!-- notification_clone container starts -->
+   <div id="notify_clone" style="display:none; width: 290px; height:48px; margin-left:5px; float:left; background-image:url(img/invitation_bg.png); background-size:290px 55px;">
+		<img src="" style="width:25px; height:25px; float:left; margin-left: 10px; margin-top:9px;" />
+		<span style="display:inline-block; width:80px; margin-left:10px; margin-top:13px; vertical-align:top; color:white;font-size:12px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;">abcd</span>
+		<span style="display: inline-block; margin-left:-10px; margin-top:15px; vertical-align:top; color:#00CCCC;font-size: 10px;">Would Like to CoVu</span>
+		<img id="notify_join_btn" src="img/join_invites.png" name="joincode" style="width:45px; height:24px; margin-right:22px; cursor:pointer; margin-top:9px;" />
+		<img id="Join_cancel" src="img/cross.png" style="width:17px; height:17px; float:right; margin-right:12px; margin-top:-39px; cursor:pointer;" />
+   </div>
+ <!-- notification_clone container ends -->
+ 
+<div id="notification_main" style=" display:none; width:292px; height:auto;float:left;">
+		<div style="background-image:url(img/invites_header.png); background-repeat:no-repeat;margin-left:3px; float:left;width:292px;height:19px;">
+		</div>
+ 
+	<div id="notification" style="display:block;width:292px;height:auto;max-height:105px;min-height:31px;margin-left:3px;overflow-y:auto; overflow-x:hidden;padding-top:7px;">
+	
+	</div>
+</div>
+ <!-- notification container ends -->
+ 
+ <!-- Coviewed_main container starts -->
+   <!-- Coviewed_clone container starts -->
+    <div id="CoViewed_clone" style="cursor:default; display:none; width: 294px;height: 31px;float:left; background-image:url(img/friend_tab.png); background-size:290px 31px;">
+    	   	
+	 	<span style="display:inline-block;margin-left:12px;margin-top:6px;color:white;font-size: 12px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden; width:215px;" title="">Yasir,Sheraz,Tahir</span>
+    	<span style="display:inline-block;float:right;margin-right:12px;margin-top:6px;color:#00CCCC;font-size:10px;">CoViewed</span>
+   </div>
+   <!-- Coviewed_clone container ends -->
+ 
+ 
+ <div id="coviewed_main" style=" display:none; width:292px; height:auto;">
+		<div style="background-image:url(img/coviewed_header.png); background-repeat:no-repeat;margin-left:3px; float:left;width:292px;height:19px;">
+		</div>
+	<div id="CoViewed_container" style="display:block;width: 292px;height:auto;max-height:120px;min-height:40px;margin-left:3px;overflow-y:auto; overflow-x:hidden;">	
+	
+   
+	</div>
+ </div>
+ 
+ <!-- Coviewed_main container ends -->
+
+	</div>
+	<!-- Friends & Notification Container Ends -->
+
+	</div> 
+	 <!-- LoggedIn Content Ends -->
+
+	 <!-- Footer Starts -->
+	 <div id="Login_footer" class="footer_log" style="display:none;">
+	 	<div style="width:122px; height:57px; float:left;">
+			<img id="host_btn_footer" class="button" src="img/host_button.png" style="width:122px; height:34px; margin-top: 5px;margin-left: 5px;" />
+			<span style="color:#FFFFFF; font-size:10px; font-family:Arial;display: inline-block;margin-top: 3px;margin-left: 16px; ">Press to Host a COVU</span>
+		</div>
+	<span style="color:#FFFFFF;font-size:14px;font-family:Arial;display:inline-block;margin-top:20px;margin-left:24px;">OR</span>
+		
+		<div style="width:122px; height:57px; float:right;">
+			<div style="float:left;margin-top: 5px;width:122px;height:35px;">
+			<input id="join_code_footer" type="text" maxlength="4" value="" placeholder="a1b2..." style=" width:77px; height:35px; padding-top:1px; background:url(img/entercode_input.png); background-size:77px 35px; float:left; text-align:center;outline:none; border:none; font-size:22px;" />
+			
+			<img id="lead_click_footer" class="button" src="img/join_button.png" style="cursor:pointer; width:44px; height:35px; margin-left:-5px; margin-top:0px; " />
+			</div>
+			<span style="color:#FFFFFF; font-size:9px; font-family:Arial; display: inline-block;margin-top: 3px;">Enter code to Join a COVU</span>
+		</div>
+		
+	</div>
+	<!-- Footer Ends -->
+	<!-- LoggedOut Content Starts -->
+	<div id="content_logOut" class="content" style=" display:block;width:310px; height:330px;margin-top:190px;" >								
+		<div style="margin-left:0px;margin-top: 30px;text-align: center;">
+		
+		<span style="color:#FFFFFF; font-size:17px; font-family:Arial; ">Press to Host a COVU</span>
+			<div style="" >
+				<img id="host_btn_home" class="button" src="img/host_button.png" style=" padding-top: 3px; width:210px; height:50px;"/>
+			</div>
+		</div>
+	
+		<img src="img/or_line.png" style=" width:282px; height:11px;margin-left: 14px; margin-top:20px;" />		
+		<br />
+		
+		<div style="margin-top:20px; margin-left:0px; text-align:center;width:310px;">
+			<span style="color:#FFFFFF;font-size:17px; font-family:Arial, Helvetica, sans-serif;">Enter code to Join a COVU</span>
+			
+			<div style="float:left; margin-left:84px;margin-top: 5px;width:155px; height:43px;">
+			<input id="join_code" type="text" maxlength="4" value="" placeholder="a1b2..." style=" width:96px; height:43px; padding-top:1px; background:url(img/entercode_input.png); float:left; text-align:center;outline:none; border:none; font-size:22px;" />
+			
+			<img  src="img/join_button.png" id="lead_click" style="cursor:pointer; width:54px; height:43px; margin-left:-20px; margin-top:0px; " />
+			</div>
+		</div>
+							
+	</div>		
+						
+           
+		<!--SignIn Footer Start -->	
+		<div id="signin-footer" style="color:#4BACC6; display:none; -webkit-user-select:none; margin-top:30px; float:right; margin-right:5px;font-size: 14px; font-family:Arial;">
+				<div id="sign_button" style="display:block;">
+					<span class="button" style=" cursor:pointer;" onClick="CoVu.Popup.showSignin();">Sign In</span>
+					<div style="width:1px; float:right; position: absolute;right:63px;bottom:5px;border-radius:8px;height:11px; background-color:#4BACC6;"></div>
+					<span class="button" style="margin-left:15px;cursor:pointer;" onClick="CoVu.Popup.showSignup();">Sign Up</span>
+				</div>	
+				<div id="logout_button" style="display:none;">
+					<span id="email-id" style=" float:left;margin-right:0px;max-width:150px; overflow: hidden;text-overflow:ellipsis;white-space: nowrap; display: inline-block; font-weight:normal;" >asdfasdfabc123@yahoo.com</span>
+					<div style="width:1px; float:right; position: absolute;right:63px;bottom:5px;border-radius:8px;height:11px; background-color:#4BACC6;"></div>
+					<span  class="button" style=" padding-top:40px; margin-left:12px; cursor:pointer;" onClick="CoVu.Popup.signout();">Sign Out</span>
+				</div>
+
+		</div>
+		<!--SignIn Footer End -->
+		<!--<span style="color:#4BACC6;font-size:12px; float:left;margin-top:38px;margin-left: 5px;">v</span>-->
+	<span id="version" style="display:none;color:#4BACC6;font-size:10px;position: absolute;bottom:0px;left:2px;">v1.3.0</span>		
+</div>
+<!-- Home Screen Main Page end -->
+
+
+<!-- Lead Screen Main Page Starts -->
+<div id="screen_lead" style=" position:fixed; display:none;height:300px; float:left;">
+	
+	<div class="content" style="width:310px; height:330px; color:#FFFFFF;margin-top: 25px;float:left;" >
+	
+		<div style="text-align:center; margin-top: 40px; font-family:Arial;">
+			<span style="color:#FFFFFF; font-size:16px;">Tell your friends to enter this code:</span>
+			<br />
+
+			<div style=" background:url(img/small-input-text-field.png); background-size:92px 42px;width:92px; height:42px; margin-left:109px; margin-top:8px;">
+				<span  id='follow_codeee' style="font-size:22px; color:black; display:inline-block; margin-top:9px; -webkit-user-select:text;">a1z6</span>
+			</div>
+		
+		</div>
+		<img src="img/or_line.png" style=" width:282px; height:12px;margin-left: 14px; margin-top:35px;" />	
+	
+		<div style="text-align: center; margin-top:30px;font-family:Arial; ">
+			<span style="font-size:18px; color:#FFFFFF; ">Share this URL:</span>
+			<input type="text" id="email_url_lite"  readonly="readonly" style="width:197px; font-size:14px; background:url(img/txtfield.png); height:33px; margin-top:3px; padding-left:6px; padding-right:3px; outline:none; border:none;" />			
+		</div>
+		
+		
+<!--Invite Container Start -->
+		 <div id="invite-container" style=" display:none; background:#666666; border-radius:8px; -webkit-box-shadow:-2px 2px 10px 1px rgba(51, 51, 51, 5); border:1px solid black; position:absolute; z-index:9999999; width:290px; left:9px; margin-top:-171px;">
+		   <img src="img/cross1.png" style="position:absolute; float:right; right:-8px; top:-10px; width:16px; height:16px; cursor:pointer;" onclick='CoVu.Popup.invite();' />
+		   
+		   <div style="float:left; width:332; font-size:14px; font-weight:bold; font-family:Arial; color:#FFFFFF; margin-top:12px; margin-left:20px; margin-bottom:12px;">
+		   Invite your friends in Live session
+		   </div>
+		
+		    <table cellspacing="0" cellpadding="0">
+			
+			<tr>
+				<td>
+				 <input id="follower_email_id" type="text" class="linkbox" onFocus="this.style.border='1px solid #999999';" style="margin-top:5px;" value=""  placeholder="e.g john@optini.com" onKeyPress="CoVu.Popup.triggetClickOn('send-email');" />
+				</td>
+			</tr>
+			 </table>
+			    
+			<textarea  id='invite_message' style="background: url(img/msgContainer.png) no-repeat; background-size: 284px 95px; font-size:12px; font-family:Arial; font-weight:bold; color:#676161; width: 284px; height: 95px; margin-top: 2px; margin-left: 3px; outline: none; border: none; resize: none; padding-left: 10px; padding-top: 11px;">Hi! I'd like to invite you to my COVU!
+Come join and cobrowse with me.
+Thanks!</textarea>
+
+ <img class="button" src='img/send_invite.png' id="send-email"  style='margin-left: 68px; margin-bottom: 4px;' onclick='CoVu.Popup.sendInvitation();'/>
+
+</div>
+<!--Invite Container Ends -->		
+		
+		
+		
+		
+		<div style="margin-left:85px; margin-top:7px;">
+		<img src="img/email-icon.png" class="button" style="width:34px; height:34px; "onclick='CoVu.Popup.invite();' />
+		<img src="img/facebook-icon.png" style="width:34px; height:34px; margin-left:15px;" />
+		<img src="img/twitter-icon.png" style="width:34px; height:34px; margin-left:15px;" />
+		</div>
+		
+		<div>
+		</div>
+				
+					
+		<div  id='follower_1' style=" display:none; background: url(img/coviewer-bg.png); margin-left:6px;margin-top:-1px; background-size:240px 25px; width:240px; height:25px"  class="follower_list">
+    
+    <span class="blackLabelM " style="positon: absolute; font-size: 15px; display:inline-block; padding-left:8px; margin-top: 4px;"></span>
+   </div>
+  <!--Follower List start-->
+ <div id='leadInfoFollowerList' class="slide down"  style=' margin-left:0px; '>
+   
+  <div class="blackLabelM" style=" display:block; background: url(img/coviewers_container.png); background-size:251px 233px;  margin-left:29px; width:251px;height:233px;overflow-x: hidden; overflow-y: hidden; border: none; ">
+   
+   <div id='follower_container' style='margin-top:20px; width:245px; overflow-y: auto;overflow-x: hidden; height: 185px;' > 
+     
+   </div>
+  </div>
+
+ </div>  
+   
+ </div>
+		<!--Follower List end-->
+		<div style=" color:white; position:absolute; bottom:-71px; background-image:url(img/coviewers_footer.png); width:310px; height:40px;">
+	<div id="follower" onclick='CoVu.Popup.toogleFollowerListDisplay();' style=" cursor:pointer; color:white; float:left; text-align:center;  background-image:url(img/viewers.png); width: 155px;height: 40px;background-size: 155px 40px;background-repeat: no-repeat;margin-top:1px;
+">
+		<div style="background:url(img/followers_icon.png);background-size:45px 33px;width:45px; height:33px; margin-left:55px;margin-top:2px;">				
+			<span id='leadInfoFollowCount' style="border:2px solid; color:black; font-weight:bold; font-family:Calibri;font-size:19px; display:inline-block;margin-top: 12px;margin-right:0px;">0</span>
+		</div>
+	</div>
+	<div class="button" style=" text-align:center; float:left;background-image:url(img/stop.png); width:154px;height: 40px;margin-left: 1px;background-size: 154px 40px;background-repeat: no-repeat;margin-top:1px;" onclick='CoVu.Popup.closeLeaderSession();'>
+				<span style="margin-top:10px; color:#E6E6E6; font-family:Arial; font-size:17px; display: inline-block;">Stop</span>
+		</div>
+		
+		</div>	
+		
+    </div>
+	
+	 <!-- Content Close  -->
+
+<!-- Lead Screen Main Page end -->
+
+ <!-- Header starts -->
+
+<div class="header" id="home_Header" style="display:none; position:fixed; ">
+	 		<img class="button" src="img/stream-icon.png" style=" display:none;float:left;width:33px; height:30px; margin-left:5px;margin-top:5px;"onClick="CoVu.Popup.showStream();" /> 
+	 		<img src="img/covu_header_logo.png" style="width: 110px;height: 25px;margin-left:5px;margin-top:6px;float:left;"/>
+						
+			<div id="fb_button" class="button" style="float:right; margin-right:5px;margin-top:3px; display:block;">
+				<img src="img/facebook_icon.png" style="margin-top:6px;" />
+			</div>
+			<div style="display:none;background-image:url(img/notification-icon.png);background-size:25px 25px;width:25px;height:25px;float:right;margin-right:7px;margin-top:7px;cursor:pointer;" onclick='CoVu.Popup.showNotification();'>
+				<span id="frds_notificationn" style="display: inline-block; margin-left: 5px; margin-top: 6px; color: red; cursor: pointer; text-align: center; width: 20px;">0</span>
+			</div>
+		
+	</div>
+		
+		  <!-- Header closed -->
+		  			<!-- notification container starts -->	
+	
+<!--			<div id="notify_container" style="display:none; width: 240px; height: 46px;">
+				<img src="" style="width: 35px;height: 35px;float: left;margin-left: 10px;margin-top: 5px;" />
+				<span style="display: inline-block;margin-left: 10px;margin-top: 13px; color:black;">abcd</span>
+				<img src="img/join.png" name="joincode" onclick='CoVu.Popup.notify_follow(this);' style="width: 50px;height: 30px;float: right;margin-right: 10px;margin-top: 8px; cursor:pointer" />
+			</div>
+		
+	
+	<div class="notify" style="display:none;background-size:250px 280px;">
+		<div id="notification_container" style="display:none; border:1px solid #ff0000; width:240px; height:160px;">
+		
+		
+		</div>
+	</div>
+
+
+
+<!-- Follow Screen Main Page Starts -->
+<div id="stream" class="stream-slide in" style="">
+	<div style="width:275px;height:50px;">
+		<div style="float:left;margin-left: 5px; color:#FFFFFF;font-size:12px;">
+			<img id="large_profile_imagee" src="img/profile-image.png" style="width:45px; height:45px; margin-top:2px;" />
+			<span id="facebook_user_namee" style="float:left;margin-left: 50px;margin-top:-30px;">Jim Wright</span>
+		</div>
+			<img id="invite_button" class="button" src="img/invite.png" style="display:block;width:84px; height:36px; float:right;margin-right: 5px;margin-top: 7px;" onclick='CoVu.Popup.sendNotification();'  />
+	</div>
+	
+	<!-- CoVu Friend Container Starts -->
+	<div>
+		<div id="covu_frnd_header" style=" background-image:url(img/friends-header.png);width:275px;height:30px;cursor:pointer;" onclick='CoVu.Popup.Covu_friend();'>
+			<img src="img/covu_friends.png" style="float:left; width: 63px;height: 17px;margin-top: 7px;margin-left: 8px;"/>
+			<img src="img/arrow.png" style="float:right; width:10px;height:10px;margin-right: 10px;margin-top: 12px; cursor:pointer;" />
+		</div>
+		
+		<!-- clone div -->
+		<div id="covu_friendss" class="covu_f" style="display:none; width:245px;height:30px; color:#FFFFFF;font-size:10px;">
+				<input type="checkbox" class="checkbox" name="covu_friends_ab" value="" style="float:left;margin-left:11px;margin-top:8px;"/>
+				<img src="img/online_status.png"  id="online_friends_imgg" style="display:block; width:10px; height:10px;float: left;margin-left:5px;margin-top:9px;"/>
+				<img src="img/offline.png" id="offline_friends_imgg" style="display:none; width:10px; height:10px;float: left;margin-left:5px;margin-top:9px;"/>
+				<img src="" id="img_ppp" style="width:25px;height:25px;float: left;margin-left: 10px;margin-top: 2px;" />
+				<span style="display: inline-block;margin-top:8px;margin-left:8px;">abcdef</span>
+			</div>
+		<!-- clone div ends -->
+		<div id="covu_friends_containerr" style="background-color:black; display:none; width:274px; height:249px; overflow-y:auto; overflow-x:hidden;">
+			
+		</div>
+		
+	</div>
+	<!-- CoVu Friend Container ends -->
+	
+	<!-- FB Friend Container Starts -->
+<!--	<div>
+		<div id="FB_frnd_header" style=" background-image:url(img/friends-header.png);width:275px;height:30px;cursor:pointer;"onclick='CoVu.Popup.Fb_friend();'>
+			<img src="img/FB_friend.png" style="float:left; width: 63px;height: 17px;margin-top: 7px;margin-left: 8px;"/>
+			<img src="img/arrow.png" style="float:right; width:10px;height:10px;margin-right: 10px;margin-top: 12px; cursor:pointer;" />
+		</div>
+		<div id="FB_friend" style="display:none;width:274px; height:188px;overflow-y:auto; overflow-x:hidden;">
+			<div style=" width:275px;height:30px; color:#FFFFFF;font-size:10px;">
+				<input type="checkbox" name="friend" value="" style="float:left;margin-left:11px;margin-top:8px;"/>
+				<img src="img/online.png" style="width:10px; height:10px;float: left;margin-left:5px;margin-top:9px;"/>
+				<img src="img/streem-pic.png" style="width:25px;height:25px;float: left;margin-left: 10px;margin-top: 2px;" />
+				<span style="display: inline-block;margin-top:8px;margin-left:8px;">abcdef</span>
+			</div>
+			<div style="width:275px;height:30px; color:#FFFFFF;font-size:10px;">
+				<input type="checkbox" name="friend" value="" style="float:left;margin-left:11px;margin-top:8px;"/>
+				<img src="img/offline.png" style="width:10px; height:10px;float: left;margin-left:5px;margin-top:9px;"/>
+				<img src="img/streem-pic.png" style="width:25px;height:25px;float: left;margin-left: 10px;margin-top: 2px;" />
+				<span style="display: inline-block;margin-top:8px;margin-left:8px;">abcdef</span>
+			</div>
+			<div style="width:275px;height:30px; color:#FFFFFF;font-size:10px;">
+				<input type="checkbox" name="friend" value="" style="float:left;margin-left:11px;margin-top:8px;"/>
+				<img src="img/online.png" style="width:10px; height:10px;float: left;margin-left:5px;margin-top:9px;"/>
+				<img src="img/streem-pic.png" style="width:25px;height:25px;float: left;margin-left: 10px;margin-top: 2px;" />
+				<span style="display: inline-block;margin-top:8px;margin-left:8px;">abcdef</span>
+			</div>
+			<div style="width:275px;height:30px; color:#FFFFFF;font-size:10px;">
+				<input type="checkbox" name="friend" value="" style="float:left;margin-left:11px;margin-top:8px;"/>
+				<img src="img/offline.png" style="width:10px; height:10px;float: left;margin-left:5px;margin-top:9px;"/>
+				<img src="img/streem-pic.png" style="width:25px;height:25px;float: left;margin-left: 10px;margin-top: 2px;" />
+				<span style="display: inline-block;margin-top:8px;margin-left:8px;">abcdef</span>
+			</div>
+			<div style="width:275px;height:30px; color:#FFFFFF;font-size:10px;">
+				<input type="checkbox" name="friend" value="" style="float:left;margin-left:11px;margin-top:8px;"/>
+				<img src="img/online.png" style="width:10px; height:10px;float: left;margin-left:5px;margin-top:9px;"/>
+				<img src="img/streem-pic.png" style="width:25px;height:25px;float: left;margin-left: 10px;margin-top: 2px;" />
+				<span style="display: inline-block;margin-top:8px;margin-left:8px;">abcdef</span>
+			</div>
+			<div style="width:275px;height:30px; color:#FFFFFF;font-size:10px;">
+				<input type="checkbox" name="friend" value="" style="float:left;margin-left:11px;margin-top:8px;"/>
+				<img src="img/offline.png" style="width:10px; height:10px;float: left;margin-left:5px;margin-top:9px;"/>
+				<img src="img/streem-pic.png" style="width:25px;height:25px;float: left;margin-left: 10px;margin-top: 2px;" />
+				<span style="display: inline-block;margin-top:8px;margin-left:8px;">abcdef</span>
+			</div>
+			
+		</div>
+		
+	</div> -->
+	<!-- FB Friend Container ends -->
+	
+	<!-- Offline Friend Container Starts -->
+<!--	<div>
+		<div id="Offline_frnd_header" style=" background-image:url(img/friends-header.png);width:275px;height:30px;cursor:pointer;" onclick='CoVu.Popup.offLine_friend();'>
+			<img src="img/offline_friends.png" style="float:left; width: 63px;height: 17px;margin-top: 7px;margin-left: 8px;"/>
+			<img src="img/arrow.png" style="float:right; width:10px;height:10px;margin-right: 10px;margin-top: 12px; "/>
+		</div>
+		<div id="offline_friend" style="display:none; width:274px; height:188px;overflow-y:auto; overflow-x:hidden;">
+			<div style=" width:275px;height:30px; color:#FFFFFF;font-size:10px;">
+				<input type="checkbox" name="friend" value="" style="float:left;margin-left:11px;margin-top:8px;"/>
+				<img src="img/offline.png" style="width:10px; height:10px;float: left;margin-left:5px;margin-top:9px;"/>
+				<img src="img/streem-pic.png" style="width:25px;height:25px;float: left;margin-left: 10px;margin-top: 2px;" />
+				<span style="display: inline-block;margin-top:8px;margin-left:8px;">abcdef</span>
+			</div>
+			<div style="width:275px;height:30px; color:#FFFFFF;font-size:10px;">
+				<input type="checkbox" name="friend" value="" style="float:left;margin-left:11px;margin-top:8px;"/>
+				<img src="img/offline.png" style="width:10px; height:10px;float: left;margin-left:5px;margin-top:9px;"/>
+				<img src="img/streem-pic.png" style="width:25px;height:25px;float: left;margin-left: 10px;margin-top: 2px;" />
+				<span style="display: inline-block;margin-top:8px;margin-left:8px;">abcdef</span>
+			</div>
+			<div style="width:275px;height:30px; color:#FFFFFF;font-size:10px;">
+				<input type="checkbox" name="friend" value="" style="float:left;margin-left:11px;margin-top:8px;"/>
+				<img src="img/offline.png" style="width:10px; height:10px;float: left;margin-left:5px;margin-top:9px;"/>
+				<img src="img/streem-pic.png" style="width:25px;height:25px;float: left;margin-left: 10px;margin-top: 2px;" />
+				<span style="display: inline-block;margin-top:8px;margin-left:8px;">abcdef</span>
+			</div>
+			<div style="width:275px;height:30px; color:#FFFFFF;font-size:10px;">
+				<input type="checkbox" name="friend" value="" style="float:left;margin-left:11px;margin-top:8px;"/>
+				<img src="img/offline.png" style="width:10px; height:10px;float: left;margin-left:5px;margin-top:9px;"/>
+				<img src="img/streem-pic.png" style="width:25px;height:25px;float: left;margin-left: 10px;margin-top: 2px;" />
+				<span style="display: inline-block;margin-top:8px;margin-left:8px;">abcdef</span>
+			</div>
+			<div style="width:275px;height:30px; color:#FFFFFF;font-size:10px;">
+				<input type="checkbox" name="friend" value="" style="float:left;margin-left:11px;margin-top:8px;"/>
+				<img src="img/offline.png" style="width:10px; height:10px;float: left;margin-left:5px;margin-top:9px;"/>
+				<img src="img/streem-pic.png" style="width:25px;height:25px;float: left;margin-left: 10px;margin-top: 2px;" />
+				<span style="display: inline-block;margin-top:8px;margin-left:8px;">abcdef</span>
+			</div>
+			<div style="width:275px;height:30px; color:#FFFFFF;font-size:10px;">
+				<input type="checkbox" name="friend" value="" style="float:left;margin-left:11px;margin-top:8px;"/>
+				<img src="img/offline.png" style="width:10px; height:10px;float: left;margin-left:5px;margin-top:9px;"/>
+				<img src="img/streem-pic.png" style="width:25px;height:25px;float: left;margin-left: 10px;margin-top: 2px;" />
+				<span style="display: inline-block;margin-top:8px;margin-left:8px;">abcdef</span>
+			</div>
+			
+		</div>
+		
+	</div> -->
+	<!-- Offline Friend Container ends -->
+	 
+</div>
+<!-- Follow Screen Main Page end -->
+
+
+
+
+</body>
+ 
+	<script type="text/javascript" src="content/covu.popup.js"></script>
+	   <script type="text/javascript" src="content/facebook.popup.js"></script>
+		<script type="text/javascript" src="covu.alerts.js"></script>
+			<script type="text/javascript" src="content/helper.js"></script>					
+			
+</html>
